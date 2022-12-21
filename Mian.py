@@ -69,16 +69,16 @@ def Initlize_Table():
             TransTable[j][0]='*'+TransTable[j][0]        
     return TransTable
 def Input_Transitions():
-        for i in range(1,rows):
-            for j in range(1,col-1):
+    for i in range(1,rows):
+        for j in range(1,col-1):
+            q=input("\u03B4("+TransTable[i][0]+ ',' +TransTable[0][j]+')')
+            while q not in states:
                 q=input("δ("+TransTable[i][0]+ ',' +TransTable[0][j]+')')
-                while q not in states:
-                    q=input("δ("+TransTable[i][0]+ ',' +TransTable[0][j]+')')
-                TransTable[i][j]=q
-                print(reshape(TransTable,(rows,col)))
+            TransTable[i][j]=q
+            print(reshape(TransTable,(rows,col)))
 def Input_OutPut():
     for j in range(1,rows):
-        out=input("Enter Output for ("+ TransTable[j][0]+')')
+        out=input("Enter Output for \u03BB("+ TransTable[j][0]+')')
         TransTable[j][col-1]=out
         print(reshape(TransTable,(rows,col)))
 
